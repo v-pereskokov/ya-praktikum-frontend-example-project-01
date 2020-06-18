@@ -1,16 +1,26 @@
 import Chats from './blocks/chats';
-import {render} from './utils/rednerDOM';
+import UserProfile from './blocks/user-profile';
+import {Router} from './modules/router';
 
-const chatsPage = new Chats();
-render('.app', chatsPage);
+const router = new Router('.app');
 
-// Через секунду контент изменится сам, достаточно обновить пропсы
+// Можно обновиться на /user и получить сразу пользователя
+router
+    .use('/', Chats)
+    .use('/user', UserProfile)
+    .start();
+
+// Через секунду контент изменится сам, достаточно дернуть переход
 setTimeout(() => {
-    chatsPage.setProps({
-        items: [3, 2, 1],
-        chat: {
-            id: 3,
-        },
-        className: 'str',
-    });
+    router.go('/');
 }, 1000);
+
+// А можно и назад
+setTimeout(() => {
+    router.back();
+}, 3000);
+
+// И снова вперед
+setTimeout(() => {
+    router.forward();
+}, 5000);

@@ -72,7 +72,7 @@ class Block {
         return true;
     }
 
-    setAttributes = (nextProps) => {
+    setProps = (nextProps) => {
         if (!nextProps) {
             return;
         }
@@ -125,6 +125,14 @@ class Block {
     _createDocumentElement(tagName) {
         // Можно сделать метод, который через фрагменты в цикле создает сразу несколько блоков
         return document.createElement(tagName);
+    }
+
+    show() {
+        this.getContent().style.display = 'block';
+    }
+
+    hide() {
+        this.getContent().style.display = 'none';
     }
 }
 
