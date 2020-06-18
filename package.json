@@ -1,0 +1,25 @@
+{
+  "name": "history",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.html",
+  "scripts": {
+    "start": "parcel public/index.html --open",
+    "build": "parcel build index.html",
+    "lint": "npx eslint 'src/**/*?(.*).js?(x)'",
+    "lint:fix": "npx eslint --fix 'src/**/*?(.*).js?(x)'"
+  },
+  "dependencies": {
+    "lodash": "^4.17.15",
+    "eslint": "5.6.0",
+    "eslint-config-airbnb": "17.1.0",
+    "eslint-plugin-eslint-comments": "3.1.2",
+    "eslint-plugin-eslint-plugin": "2.2.1",
+    "eslint-plugin-import": "2.20.0"
+  },
+  "devDependencies": {
+    "@babel/core": "7.2.0",
+    "parcel-bundler": "^1.6.1"
+  },
+  "keywords": []
+}
